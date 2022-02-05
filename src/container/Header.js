@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -12,7 +13,9 @@ const Header = () => {
       }}
     >
       <div className="ui container center">
-        <h2 style={{ letterSpacing: "1.8px" }}>FAKE-SHOP</h2>
+        <Link to="/">
+          <h2 style={{ letterSpacing: "1.8px",color:"lavender" }}>FAKE-SHOP</h2>
+        </Link>
       </div>
     </div>
   );

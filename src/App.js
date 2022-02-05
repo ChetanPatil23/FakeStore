@@ -8,8 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Router>
-        
+      <Router> 
         <Switch>
           <Route path="/" exact component={ProductListing} />
           <Route path="/product/:productId" component={ProductDetail} />
