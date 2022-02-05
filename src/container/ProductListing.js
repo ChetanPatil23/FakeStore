@@ -1,17 +1,19 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import Header from "./Header";
 import ProductComponent from "./ProductComponent";
+import { setProducts } from "../redux/actions/productActions";
 
 const ProductListing = () => {
   const products = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   const fetchProducts = async () => {
     const response = await axios("https://fakestoreapi.com/products").catch(
       (err) => console.log(err)
     );
-    console.log(response.data);
+    dispatch(setProducts(response.data));
   };
 
   useEffect(() => {
